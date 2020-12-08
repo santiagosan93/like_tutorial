@@ -1,0 +1,5 @@
+<% if place.liked_by_user?(current_user) %>
+  <i class="fas fa-heart heart" data-place-id="<%= place.id %>" data-action="click->like#destroyLike" data-like-id="<%= place.like_of_user(current_user).id %>"></i>
+<% else %>
+  <i class="far fa-heart heart" data-place-id="<%= place.id %>" data-action="click->like#createLike"></i>
+<% end %>

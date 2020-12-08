@@ -1,0 +1,6 @@
+<div class="place-card position-relative d-flex justify-content-center align-items-center">
+  <p><%= place.address %></p>
+  <!-- We need to have a conditional statement to display one heart or the other -->
+  <!-- How do we know if the user has already liked this place? -->
+  <%= render 'places/heart', place: place %>
+</div>
