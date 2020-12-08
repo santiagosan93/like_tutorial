@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def likes
+    @likes = current_user.get_up_voted(Place)
+  end
 end

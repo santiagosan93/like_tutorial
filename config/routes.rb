@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/likes', to: "pages#likes", as: :likes
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :places, only: :index do
-    resources :likes, only: [:create, :destroy], defaults: { format: :json }
+    member do
+      post :like, defaults: { format: :json }
+      delete :unlike, defaults: { format: :json }
+    end
   end
 end

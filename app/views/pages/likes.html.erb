@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>Here are all the places</h1>
+  <h1>Here are all your places</h1>
   <div class="place-cards" data-controller="like">
-    <% @places.each do |place| %>
+    <% @likes.each do |place| %>
       <!-- Render a card -->
       <%= render 'places/card', place: place %>
     <% end %>
