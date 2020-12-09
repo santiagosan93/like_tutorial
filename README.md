@@ -203,14 +203,14 @@ As you can see here we are explicitly telling acts_as_votable that our liker is 
 Now here with this arsenal we have everything to create/destroy likes in our movies.
 
 ## Lets crash test this
-If you added the seeds that come with this tutorial, you can copy paste these lines inside of your ```rails console``` just the way they are. If not, you will have to adapt them to your current needs.
+If you added the seeds that come with this tutorial, you can copy/paste the following lines inside of your ```rails console``` just the way they are. If not, you will have to adapt them to your current needs.
 
-Let's start by making our first user of our database like a random movie.
+Let's start by making the first user of our database give a like to a random movie.
 
 ```ruby
  # rails c
  user = User.first
- movie = Movie.sample
+ movie = Movie.all.sample
 
  movie.liked_by(user)
  # => Creates the like inside of your databse
@@ -247,7 +247,7 @@ rails webpacker:install:stimulus
 
 touch app/javascript/controllers/likes_controller.js
 ```
-Now we have installed stimullus and we have also created our first stimulus controller. Now let's implement a basic stimulus controller skeleton.
+Now we have installed stimulus and we have also created our first stimulus controller. Now let's implement a basic stimulus controller skeleton.
 
 ```js
 import { Controller } from "stimulus"
