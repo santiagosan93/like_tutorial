@@ -210,7 +210,7 @@ Let's start by makin our first user of our database like a randome movie.
 ```ruby
  # rails c
  user = User.first
- movie = Movie.sample
+ movie = Movie.all.sample
 
  movie.liked_by(user)
  # => Creates the like inside of your databse
