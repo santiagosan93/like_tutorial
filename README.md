@@ -316,7 +316,7 @@ export default class extends Controller {
 }
 ````
 
-So here what is happening is that we defined our updateLike action. This way our click event in the heart will no longer throw an error when we click it. And what's happening in this function, is first we are substracting all of the information from our heart needed to make the request that we want. So we have the ```movieId``` and the ```method``` of the request we want to make. Then we use this information to create our path inside of our ```Rails.ajax``` function and we expect that this call returns to use a heart so that we can replace the old heart (before click) with the actual one (current click).
+So here what is happening is that we defined our updateLike action. This way our click event in the heart will no longer throw an error when we click it. And what's happening in this function, is first we are substracting all of the information from our heart needed to make the request that we want. So we have the ```movieId``` and the ```method``` of the request we want to make. Then we use this information to create our path inside of our ```Rails.ajax``` function and we expect that this call returns an unpdated heart (after click) so that we can replace the old heart (before click) with it.
 
 
 Now we need to update our routes to have this two new routes in charge of creating and deleting a like.
@@ -381,9 +381,6 @@ success: (data) => {
 
 
 Happy Hacking!!!
-
-
-
 
 
 
