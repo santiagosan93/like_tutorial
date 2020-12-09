@@ -233,7 +233,7 @@ If you check with another movie that is not the one assigned to our ```movie``` 
 Now the we have a way to know if a user has liked a movie, we can update our views so that they show a full/empty heart depending on this.
 
 ```erb
-<!-- app/views/movies/heart.html.erb -->
+<!-- app/views/movies/_heart.html.erb -->
   <i class="<%= current_user.liked?(movie) ? 'fas' : 'far' %> fa-heart heart"></i>
 ```
 Above we have set a ternary to be incharge of adjusting one of the classes of the heart between ```fas``` and ```far``` depending on if the the user has liked the movie in the current iteration.
